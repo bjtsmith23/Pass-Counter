@@ -1,0 +1,62 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Pass Counter</title>
+  </head>
+  <body>
+    <div class="timer">Time: <span id="time">0</span></div>
+
+    <div class="container">
+        <div class="start" id="start-screen">
+            <h1>Pass Counter</h1>
+            <p>Pass Counter to help count passes for teams</p>
+            <button type="button" class="btn btn-primary btn-lg" id="start">
+                Start Match
+            </button>
+          </div>
+      
+          <div class="hide" id="passCount">
+            <div class="passtotal">
+                <div class="passes">Passes: <span id="pass"></span></div>
+              <button type="button" class="btn btn-primary btn-lg" id="team1p">
+                  Add Pass for Team 1
+              </button>
+              <div class="passes">Passes: <span id="pass"></span></div>
+              <button type="button" class="btn btn-primary btn-lg" id="team2p">
+                  Add Pass for Team 2
+              </button>
+            </div>
+            <div class="halftime">
+              <button type="button" class="btn btn-success btn-lg" id="halftiz">Halftime</button>
+            </div>
+            
+          </div>
+      
+          <!-- half-time was formerly end-screen -->
+          <!-- halftime-passes was formerly final-score -->
+          <div class="hide" id="half-time">
+            <h2>Half-time</h2>
+            <p>Passes for the first half are?? <span id="halftime-passes"></span></p>
+          </div>
+      
+          <div class="hide" id="full-time">
+            <h2>Full-time!!</h2>
+            <p>
+              Passes for the first half the second half and game are are
+              <span id="final-score"></span>
+            </p>
+          </div>
+    </div>
+    
+
+    <script src="./javascript/index.js"></script>
+  </body>
+</html>

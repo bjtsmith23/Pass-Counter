@@ -1,0 +1,44 @@
+
+body {
+    background-image: url("https://cdn.shopify.com/s/files/1/1705/8535/products/shutterstock_406740199_web_1024x1024.jpg?v=1495779660")
+
+}
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.start {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.passtotal {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.passes {
+    text-align: center;
+    margin-top: 50px;
+    font-size: 25px;
+}
+
+.hide {
+    display: none;
+  }
+
+.halftime {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.btn-primary {
+    max-width: 750px;
+}
