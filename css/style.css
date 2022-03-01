@@ -1,13 +1,14 @@
 
-body {
-    background-image: url("https://cdn.shopify.com/s/files/1/1705/8535/products/shutterstock_406740199_web_1024x1024.jpg?v=1495779660")
+.body {
+    background-image: url(../images/download.jfif);
 
+    
 }
 .container {
-    display: flex;
+    /* display: flex;
     align-items: center;
-    justify-content: center;
-    flex-direction: column;
+    flex-direction: column; */
+    
 }
 
 .start {
@@ -17,15 +18,37 @@ body {
     align-items: center;
 }
 
-.passtotal {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
+#start-screen {
+    height: 550px;
+    width: 700px;
+    background-image: url("https://preview.redd.it/zq5ch5o7z1f51.jpg?auto=webp&s=193a21bf5d0ac2bde505348f48a6cb3f7805645c");
+    background-size: contain;
 }
+.total {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    /* display: flex; */
+    align-items: center;
+    color: white;
+    /* justify-content: space-between; */
+    
+}
+
+/* .goaltotal {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    color: white;
+} */
 
 .passes {
     text-align: center;
     margin-top: 50px;
+    font-size: 25px;
+}
+
+p {
     font-size: 25px;
 }
 
@@ -42,3 +65,9 @@ body {
 .btn-primary {
     max-width: 750px;
 }
+
+.timer {
+    color: white;
+    font-size: 50px;
+}
+

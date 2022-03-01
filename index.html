@@ -11,33 +11,46 @@
     <link rel="stylesheet" href="css/style.css" />
     <title>Pass Counter</title>
   </head>
-  <body>
+  <body class="body">
     <div class="timer">Time: <span id="time">0</span></div>
 
     <div class="container">
         <div class="start" id="start-screen">
             <h1>Pass Counter</h1>
             <p>Pass Counter to help count passes for teams</p>
-            <button type="button" class="btn btn-primary btn-lg" id="start">
+            <button type="button" class="btn btn-primary" id="start">
                 Start Match
             </button>
           </div>
       
           <div class="hide" id="passCount">
-            <div class="passtotal">
-                <div class="passes">Passes: <span id="pass"></span></div>
-              <button type="button" class="btn btn-primary btn-lg" id="team1p">
-                  Add Pass for Team 1
-              </button>
-              <div class="passes">Passes: <span id="pass"></span></div>
+            
+                <div class="total">
+                    <button type="button" class="btn btn-primary btn-lg" id="team1p">+</button>
+                </button> 
+                <span id="pass1"></span>
+                <p> passes</p>
+
+                <span id="pass2"></span>
               <button type="button" class="btn btn-primary btn-lg" id="team2p">
-                  Add Pass for Team 2
+                +
               </button>
+            </div>
+
+            <div class="total">
+                    <button type="button" class="btn btn-primary btn-lg" id="team1g">
+                        Add Goal for Team 1
+                    </button>
+                    <span id="goal1"></span>
+                    Goals
+                    <span id="goal2"></span>
+                  <button type="button" class="btn btn-primary btn-lg" id="team2g">
+                      Add Goal for Team 2
+                  </button>
             </div>
             <div class="halftime">
               <button type="button" class="btn btn-success btn-lg" id="halftiz">Halftime</button>
-            </div>
-            
+            </div>            
           </div>
       
           <!-- half-time was formerly end-screen -->

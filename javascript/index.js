@@ -1,16 +1,21 @@
 var timerId;
 var timeCount = 0;
-var team1PC = 0;
-var team2PC = 0;
+// var teamOneP = 0;
+var passCount1 = 1;
+var passCount2 = 1;
 
 
 
 // HTML Elements
 var timerEl = document.getElementById("time");
+var passElOne = document.getElementById("pass1");
+var passElTwo = document.getElementById("pass2");
 var startScreenEl = document.getElementById("start-screen");
+
 var startBtn = document.getElementById("start");
-var teamOneP = document.getElementById("team1p")
-var teamTwoP = document.getElementById("team2p")
+var teamOnePassBtn = document.getElementById("team1p");
+var teamTwoPassBtn = document.getElementById("team2p");
+
 var passCountEl = document.getElementById("passCount");
 
 // MAIN PROCESS
@@ -22,34 +27,23 @@ function startMatch() {
 
 };
 
-// function filterTime() {
-//     var minutes = Math.floor(timeCount / 60);
-//     var seconds = timeCount - minutes * 60;
-// };
-
 function timerStart() {
+    timerEl.textContent = timeCount++;
     
-    timeCount++;
-    timerEl.textContent = timeCount;
-
     
 }
 
-function handlePass1() {
-    var addPass = team1PC + 1;
-    teamOneP.textContent = addPass;
 
+function handlePass1() {
+    passElOne.textContent = passCount1++;
 }
 
 function handlePass2() {
-    var anotherPass = team2PC + 1;
-    console.log(anotherPass);
-    teamOneP.textContent = anotherPass;
-
+    passElTwo.textContent = passCount2++;
 }
 
 startBtn.addEventListener("click", startMatch);
 
-teamOneP.addEventListener("click", handlePass1);
+teamOnePassBtn.addEventListener("click", handlePass1);
 
-teamTwoP.addEventListener("click", handlePass2)
+teamTwoPassBtn.addEventListener("click", handlePass2);
