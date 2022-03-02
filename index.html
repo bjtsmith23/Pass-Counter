@@ -12,46 +12,113 @@
     <title>Pass Counter</title>
   </head>
   <body class="body">
-    <div class="timer">Time: <span id="time">0</span></div>
+    <div class="timer">Time: <span id="time">00</span></div>
 
-    <div class="container">
         <div class="start" id="start-screen">
+
+          <div class="starter">
             <h1>Pass Counter</h1>
-            <p>Pass Counter to help count passes for teams</p>
-            <button type="button" class="btn btn-primary" id="start">
+            <br>
+            <p>This is a English Premier League Soccer Game Stat Counter. The user is able to select the two teams that are playing and record stats for each team throughout the game.</p>
+            <br>
+            <button type="button" class="btn btn-secondary" id="pick">
+                Pick Teams
+            </button>
+            <img src="./images/home.jpg">
+          
+          </div>
+          </div>
+
+          <div class="hide" id="pick-screen">
+
+            <div class="dropdown">
+              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                Dropdown button
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li>
+              </ul>
+            </div>
+
+            <div class="dropdown">
+              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                Dropdown button
+              </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+              </ul>
+            </div>
+            <div>
+              <button type="button" class="btn btn-secondary" id="start">
                 Start Match
             </button>
+            </div>
           </div>
       
           <div class="hide" id="passCount">
-            
-                <div class="total">
-                    <button type="button" class="btn btn-primary btn-lg" id="team1p">+</button>
-                </button> 
-                <span id="pass1"></span>
-                <p> passes</p>
 
-                <span id="pass2"></span>
-              <button type="button" class="btn btn-primary btn-lg" id="team2p">
-                +
+            <div class="row justify-content-center">
+              <div class="col-3 teams">
+                    Team 1
+                  </div>
+              <div class="col-1 teams"> 
+                <p class="mid">vs</p>
+
+                  </div>
+              <div class="col-3 teams">
+                    Team 2
+                  </div>
+            </div>
+
+          <div class="row justify-content-center teams">
+            <div class="col-3">
+              <button type="button" class="btn btn-primary btn-lg btn-block pop" id="team1p">
+                <span id="pass1"></span>
               </button>
             </div>
-
-            <div class="total">
-                    <button type="button" class="btn btn-primary btn-lg" id="team1g">
-                        Add Goal for Team 1
-                    </button>
-                    <span id="goal1"></span>
-                    Goals
-                    <span id="goal2"></span>
-                  <button type="button" class="btn btn-primary btn-lg" id="team2g">
-                      Add Goal for Team 2
-                  </button>
+            <div class="col-1 teams">
+              <p class="mid">Passes</p>
             </div>
-            <div class="halftime">
-              <button type="button" class="btn btn-success btn-lg" id="halftiz">Halftime</button>
-            </div>            
+            <div class="col-3 teams">
+              <button type="button" class="btn btn-primary btn-lg btn-block pop" id="team2p">
+                <span id="pass2"></span>
+              </button>
+            </div>
           </div>
+          
+
+            <div class="row justify-content-center teams">
+              <div class="col-3">
+                    <button type="button" class="btn btn-primary btn-lg btn-block pop" id="team1g">
+                      <span id="goal1"></span>
+                    </button>
+                  </div>
+                <div class="col-1">
+                    <p class="mid">Goals</p>
+                </div>
+                  <div class="col-3"> 
+                    <button type="button" class="btn btn-primary btn-lg btn-block pop" id="team2g">
+                      <span id="goal2"></span>
+                    </button>
+                  </div>
+            </div>
+
+
+            <div class="row justify-content-center" id="halftiz">
+              <div class="col-9">
+                <button type="button" class="btn btn-secondary btn-lg btn-block" >Halftime</button>
+              </div>
+            
+              
+                     
+          </div>
+          </div>
+
+          
       
           <!-- half-time was formerly end-screen -->
           <!-- halftime-passes was formerly final-score -->
