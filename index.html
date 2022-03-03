@@ -34,9 +34,7 @@
 
     <div class="hide" id="pick-screen">
       <div class="row justify-content-center">
-        <button class="xxx">
           <img class="cloob" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.Z5-bTIVzyHLkiPyVTWCYaAHaHa%26pid%3DApi&f=1">
-        </button>
         <button class="xxx"><img class="cloob" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.rxwallpaper.site%2Fwp-content%2Fuploads%2Fsport-backgrounds-400093-manchester-united-logo-wallpapers-800x800.jpg&f=1&nofb=1"></button>
         <button class="xxx"><img class="cloob" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.jSgOooj83064J25NBODXeQHaFj%26pid%3DApi&f=1"></button>
         <button class="xxx">
@@ -94,7 +92,7 @@
         <!-- id time is stopwatch -->
         <div class="row justify-content-center timer"><span id="time">00</span></div>
 
-        <div class="row justify-content-center">
+        <div class="row justify-content-center" id="row1">
           <div class="col-3 teams">Team 1</div>
           <div class="col-3 teams">
             <p class="mid">vs</p>
@@ -102,7 +100,7 @@
           <div class="col-3 teams">Team 2</div>
         </div>
 
-        <div class="row justify-content-center teams">
+        <div class="row justify-content-center" id="row1">
           <div class="col-3">
             <button
               type="button"
@@ -118,7 +116,7 @@
           <div class="col-3">
             <button
               type="button"
-              class="btn btn-primary btn-lg btn-block"
+              class="btn btn-primary btn-lg btn-block pop"
               id="team2p"
             >
               <span id="pass2"></span>
@@ -126,11 +124,11 @@
           </div>
         </div>
 
-        <div class="row justify-content-center">
+        <div class="row justify-content-center" id="row1">
           <div class="col-3">
             <button
               type="button"
-              class="btn btn-primary btn-lg btn-block"
+              class="btn btn-primary btn-lg btn-block pop"
               id="team1g"
             >
               <span id="goal1"></span>
@@ -142,19 +140,21 @@
           <div class="col-3">
             <button
               type="button"
-              class="btn btn-primary btn-lg btn-block"
+              class="btn btn-primary btn-lg btn-block pop"
               id="team2g"
             >
               <span id="goal2"></span>
             </button>
           </div>
         </div>
-
-        <div class="row justify-content-center">
-            <button type="button" class="btn btn-secondary btn-lg">
-              Halftime
-            </button>
+        <div class="row justify-content-center" id="row1">
+          <button type="button" class="btn btn-secondary btn-lg">
+            Halftime
+          </button>
+          </div>
+        
         </div>
+        
 
       </div>
 
