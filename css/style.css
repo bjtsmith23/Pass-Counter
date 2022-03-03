@@ -1,22 +1,26 @@
 
 .body {
-    background-image: url(../images/download.jfif);
+    background-color: rgb(56, 1, 56);
     margin-left: 110px;
     margin-right: 110px;
 }
 
-#start-screen, #passCount {
-    height: 90%;
-    width: 90%;
+#start-screen, #pick-screen, #passCount  {
+    margin-top: 50px;
+    border: 5px solid lightgrey;
+    /* height: 90%;
+    width: 90%; */
 }
 
 .row {
-    margin-top: 25px;
+    margin-top: 50px;
+    margin-bottom: 50px;
 }
 
 h1 {
     color: white;
     font-size: 50px;
+    text-align: center;
 }
 
 p {
@@ -30,28 +34,22 @@ p {
     display: none;
   }
 
-.halftiz {
+/* .halftiz {
     margin-top: 100px;
     max-width: 400px;
-}
-
-.immy {
-    text-align: center;
-    align-items: center;
-    width: auto
-}
+} */
 
 .pics {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image: url(../images/home.jpg)
+    background-image: url(../images/home.jpg);
     /* height: 100px; */
 }
 
 .teamDrop {
     display: flex;
-    justify-content: space-around;
+    flex-direction: row;
 }
 
 .timer {
@@ -60,18 +58,16 @@ p {
     /* background-color: aliceblue; */
     
 }
-#pickTeams {
-    /* display: flex; 
-    justify-content: center; */
+
+.starter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
 }
 
-#start-screen {
-    /* margin-top: 75px; */
-    /* display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center; */
+.eplPic {
+    margin-top: 20px;
 }
 
 .teams {
@@ -83,6 +79,8 @@ p {
 
 .mid {
     font-size: 15px;
+    /* text-align: center; */
+    
 }
 
 .clubs {
@@ -90,6 +88,23 @@ p {
     flex-wrap: wrap;
     color: white;
 
+}
+
+.cloob {
+    max-height: 175px;
+    max-width: 175px;
+    
+    
+}
+
+#pickButton {
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+.xxx {
+    border-radius: 20px;
+    border: 5px outset p
 }
 
 

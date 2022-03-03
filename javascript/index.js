@@ -1,3 +1,10 @@
+// var stopwatch = document.getElementById("stopwatch");
+// var startBtn = document.getElementById("start-btn");
+// var timeoutId = null;
+var ms = 0;
+var sec = 0;
+var min = 0;
+
 var timerId;
 var timeCount = 0;
 // var teamOneP = 0;
@@ -9,7 +16,7 @@ var goalCount2 = 1;
 
 
 // HTML Elements
-var timerElMin = document.getElementById("time");
+var timerEl = document.getElementById("time");
 // var timerElSec = document.getElementById("times");
 var passElOne = document.getElementById("pass1");
 var passElTwo = document.getElementById("pass2");
@@ -39,20 +46,52 @@ function pickTeams() {
 function startMatch() {
     pickScreenEl.setAttribute("class", "hide");
     passCountEl.setAttribute("class", "show");
-   
-    timerElMin.textContent = timeCount++;
-
+    console.log("I have been clicked!!!");
+    function startTime(flag) {
+    timeoutId = setTimeout(function() {
+        ms = parseInt(ms);
+        sec = parseInt(sec);
+        min = parseInt(min);
+ 
+        ms++;
+ 
+        if (ms == 100) {
+            sec = sec + 1;
+            ms = 0;
+        }
+        if (sec == 60) {
+            min = min + 1;
+            sec = 0;
+        }
+        if (ms < 10) {
+            ms = '0' + ms;
+        }
+        if (sec < 10) {
+            sec = '0' + sec;
+        }
+        if (min < 10) {
+            min = '0' + min;
+        }
+ 
+        timerEl.innerHTML = min + ':' + sec;
+ 
+        // calling start() function recursivly to continue stopwatch
+        startTime();
+ 
+    }, 10); // setTimeout delay time 10 milliseconds
+}   
+startTime();
 }
 
-// function timerFilter() {
-  
-//     if (timerId < 60) {
-//         timerElSec.textContent = timeCount;
-//     } else {
-//         timerElMin.textContent = timeCount / 60;
-//         timerElSec.textContent = timeCount % 60;
-//     };
-// };        
+
+
+
+
+
+
+
+
+
 
 
     function handlePass1() {
