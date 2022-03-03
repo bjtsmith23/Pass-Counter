@@ -1,20 +1,13 @@
 
 .body {
     background-color: rgb(56, 1, 56);
-    margin-left: 110px;
-    margin-right: 110px;
-}
-
-#start-screen, #pick-screen, #passCount  {
     margin-top: 50px;
-    border: 5px solid lightgrey;
-    /* height: 90%;
-    width: 90%; */
 }
 
 .row {
     margin-top: 50px;
     margin-bottom: 50px;
+    /* align-items: center; */
 }
 
 h1 {
@@ -34,11 +27,6 @@ p {
     display: none;
   }
 
-/* .halftiz {
-    margin-top: 100px;
-    max-width: 400px;
-} */
-
 .pics {
     display: flex;
     align-items: center;
@@ -47,27 +35,19 @@ p {
     /* height: 100px; */
 }
 
-.teamDrop {
-    display: flex;
-    flex-direction: row;
-}
-
 .timer {
     color: white;
     font-size: 30px;
-    /* background-color: aliceblue; */
     
 }
 
 .starter {
+    margin-left: 15px;
+    margin-right: 15px;
     display: flex;
     flex-direction: column;
     align-items: center;
 
-}
-
-.eplPic {
-    margin-top: 20px;
 }
 
 .teams {
@@ -77,18 +57,8 @@ p {
     text-align: center; 
 }
 
-.mid {
-    font-size: 15px;
-    /* text-align: center; */
-    
-}
 
-.clubs {
-    display: flex;
-    flex-wrap: wrap;
-    color: white;
 
-}
 
 .cloob {
     max-height: 175px;
@@ -104,7 +74,7 @@ p {
 
 .xxx {
     border-radius: 20px;
-    border: 5px outset p
+    border: 5px solid pink;
 }
 
 

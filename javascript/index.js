@@ -1,6 +1,3 @@
-// var stopwatch = document.getElementById("stopwatch");
-// var startBtn = document.getElementById("start-btn");
-// var timeoutId = null;
 var ms = 0;
 var sec = 0;
 var min = 0;
