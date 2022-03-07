@@ -14,22 +14,38 @@ var goalCount2 = 1;
 
 // HTML Elements
 var timerEl = document.getElementById("time");
-// var timerElSec = document.getElementById("times");
+
+
 var passElOne = document.getElementById("pass1");
 var passElTwo = document.getElementById("pass2");
 var goalElOne = document.getElementById("goal1");
 var goalElTwo = document.getElementById("goal2");
 
+
+var chelsea = document.getElementById("chelsea");
+
 var startScreenEl = document.getElementById("start-screen");
-var pickScreenEl = document.getElementById("pick-screen");
+var pickScreenEl = document.getElementById("pick-screen1");
 var passCountEl = document.getElementById("passCount");
+var halftimeEl = document.getElementById("half-time");
+var fullTimeEl = document.getElementById("full-time");
+var passCount2El = document.getElementById("passCount2");
+
+var homeTeamEl = document.getElementById("home1");
 
 var pickTeamBtn = document.getElementById("pick");
 var startMatchBtn = document.getElementById("start");
+var halfTimeBtn = document.getElementById("halftiz");
+var secondHalfBtn = document.getElementById("halftiz2");
+
+var fullTimeBtn = document.getElementById("fulltiz");
+
 var teamOnePassBtn = document.getElementById("team1p");
 var teamTwoPassBtn = document.getElementById("team2p");
 var teamOneGoalBtn = document.getElementById("team1g");
 var teamTwoGoalBtn = document.getElementById("team2g");
+
+// var chelseaBtn = document.getElementById("chelsea")
 
 
 
@@ -37,7 +53,7 @@ var teamTwoGoalBtn = document.getElementById("team2g");
 function pickTeams() {
     startScreenEl.setAttribute("class", "hide");
     pickScreenEl.setAttribute("class", "show");
-    console.log("im clicked!!");
+    console.log("Chelsea");
 };
 
 function startMatch() {
@@ -78,17 +94,26 @@ function startMatch() {
     }, 10); // setTimeout delay time 10 milliseconds
 }   
 startTime();
+};
+
+function halfTime() {
+    passCountEl.setAttribute("class", "hide");
+    halftimeEl.setAttribute("class", "show");
+    console.log(passCount1);
+
 }
 
+function secondHalf() {
+    halftimeEl.setAttribute("class", "hide");
+    passCount2El.setAttribute("class", "show");
+    // console.log(passCount1);
+}
+
+function fullTime() {
+    passCount2El.setAttribute("class", "hide");
 
 
-
-
-
-
-
-
-
+}
 
 
     function handlePass1() {
@@ -107,9 +132,29 @@ startTime();
         goalElTwo.textContent = goalCount2++;
     }
 
+    function chooseChelsea() {
+        // homeTeamEl.textContent = chelsea;
+        console.log('Hi there!!');
+        // homeTeamEl.innerHTML = ''; 
+      };
+
     pickTeamBtn.addEventListener("click", pickTeams);
 
     startMatchBtn.addEventListener("click", startMatch);
+
+    halfTimeBtn.addEventListener("click", halfTime);
+
+    secondHalfBtn.addEventListener("click", secondHalf);
+
+    fullTimeBtn.addEventListener("click", fullTime);
+    
+
+
+
+
+
+
+
 
     teamOnePassBtn.addEventListener("click", handlePass1);
 

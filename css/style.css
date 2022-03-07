@@ -1,17 +1,14 @@
 .body {
     background-color: rgb(56, 1, 56);
     margin-top: 50px;
+    color: white;
 }
 
 .row {
     margin-top: 25px;
     margin-bottom: 25px;
-    /* align-items: center; */
 }
 
-#row1 {
-    align-items: center;
-}
 
 h1 {
     color: white;
@@ -21,7 +18,7 @@ h1 {
 
 p {
     text-align: center;
-    font-size: 20px;
+    font-size: 15px;
     color: white;
     max-width: 600px;
 }
@@ -29,14 +26,6 @@ p {
 .hide {
     display: none;
   }
-
-.pics {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-image: url(../images/home.jpg);
-    /* height: 100px; */
-}
 
 .timer {
     color: white;
@@ -60,17 +49,20 @@ p {
 
 .teams {
     color: white;
-    font-size: 30px;  
+    font-size: 20px;  
     text-align: center; 
 }
 
-
+#chelsea {
+    border-radius: 20px;
+}
 
 
 .cloob {
     border-radius: 20px;
     max-height: 100px;
     max-width: 100px;
+
     
     
 }
