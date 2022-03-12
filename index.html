@@ -17,7 +17,8 @@
 
     <div class="start" id="start-screen">
       <div class="starter">
-        <h1>Pass Counter</h1>
+        <img class="eplPic1" src="./images/emblem.jpg" />
+        <h1>Match Tracker</h1>
         <br />
         <p>
           This is a English Premier League Soccer Game Stat Counter. The user is
@@ -29,93 +30,94 @@
           Pick Teams
         </button>
         <img class="eplPic" src="./images/home.jpg" />
+        
+        
       </div>
     </div>
 
+
+    
+
     <div class="hide" id="pick-screen1">
-
-      <div id="home1">
-
-      </div>
-      <div id="away2">
-
-      </div>
-
-
-
-      <div class="row justify-content-center" id="teamGrid">
       <div>
+      <h2 id="question-text">Select today's Home Team</h2>
+      <div class="hide" id="home22"></div>
+      <!-- <div id="choices" class="choices"></div> -->
+      <button type="button" onclick="pickChelsea()" class="btn btn-primary btn-lg yup">
+        Chelsea
+      </button>
+      <button type="button" class="btn btn-primary btn-lg yup">
+        Liverpool
+      </button>
+      <button type="button" class="btn btn-primary btn-lg yup">
+        Man City
+      </button>
+      <button type="button" class="btn btn-primary btn-lg yup">
+        Man U
+      </button>
+
+
+      <button type="button" class="btn btn-secondary btn-lg" id="chooseAway">
+        Choose Away Sided
+      </button>
+    </div>
+      
+      
         
-        
-        <button type="button" id="chelsea" onclick="chooseChelsea()">
-          <img class="cloob" id="cloob" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.Z5-bTIVzyHLkiPyVTWCYaAHaHa%26pid%3DApi&f=1">
-        </button>
-        <img class="cloob" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.rxwallpaper.site%2Fwp-content%2Fuploads%2Fsport-backgrounds-400093-manchester-united-logo-wallpapers-800x800.jpg&f=1&nofb=1">
-        
-        <img class="cloob" src="https://i.pinimg.com/736x/ce/da/77/ceda77586409fc9df97873db960c260e.jpg">
-        
-        <img class="cloob" src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/62d46969785865.5b8dbe157b162.jpg">
-       
-        <img class="cloob" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.sgS2DQDu8R0JLf8-T_qMTgHaHa%26pid%3DApi&f=1">
+    </div>
+
+    <div class="hide" id="pick-screen2">
+    
 
 
 
-
-        <button type="button" id="chelsea" onclick="chooseChelsea()">
-          <img class="cloob" id="cloob" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.Z5-bTIVzyHLkiPyVTWCYaAHaHa%26pid%3DApi&f=1">
-        </button>
-        <img class="cloob" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.rxwallpaper.site%2Fwp-content%2Fuploads%2Fsport-backgrounds-400093-manchester-united-logo-wallpapers-800x800.jpg&f=1&nofb=1">
-        
-        <img class="cloob" src="https://i.pinimg.com/736x/ce/da/77/ceda77586409fc9df97873db960c260e.jpg">
-        
-        <img class="cloob" src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/62d46969785865.5b8dbe157b162.jpg">
-       
-        <img class="cloob" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.sgS2DQDu8R0JLf8-T_qMTgHaHa%26pid%3DApi&f=1">
-        <button type="button" id="chelsea" onclick="chooseChelsea()">
-          <img class="cloob" id="cloob" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.Z5-bTIVzyHLkiPyVTWCYaAHaHa%26pid%3DApi&f=1">
-        </button>
-        <img class="cloob" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.rxwallpaper.site%2Fwp-content%2Fuploads%2Fsport-backgrounds-400093-manchester-united-logo-wallpapers-800x800.jpg&f=1&nofb=1">
-        
-        <img class="cloob" src="https://i.pinimg.com/736x/ce/da/77/ceda77586409fc9df97873db960c260e.jpg">
-        
-        <img class="cloob" src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/62d46969785865.5b8dbe157b162.jpg">
-       
-        <img class="cloob" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.sgS2DQDu8R0JLf8-T_qMTgHaHa%26pid%3DApi&f=1">
-        <button type="button" id="chelsea" onclick="chooseChelsea()">
-          <img class="cloob" id="cloob" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.Z5-bTIVzyHLkiPyVTWCYaAHaHa%26pid%3DApi&f=1">
-        </button>
-        <img class="cloob" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.rxwallpaper.site%2Fwp-content%2Fuploads%2Fsport-backgrounds-400093-manchester-united-logo-wallpapers-800x800.jpg&f=1&nofb=1">
-        
-        <img class="cloob" src="https://i.pinimg.com/736x/ce/da/77/ceda77586409fc9df97873db960c260e.jpg">
-        
-        <img class="cloob" src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/62d46969785865.5b8dbe157b162.jpg">
-       
-        <img class="cloob" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.sgS2DQDu8R0JLf8-T_qMTgHaHa%26pid%3DApi&f=1">
-       
-      </div>
-
-        <div class="row justify-content-center" id="pickButton">
-          <button type="button" class="btn btn-secondary" id="start">
-            Start Match
-          </button>
-        </div>
-      </div>
-      </div>
+      <h2 id="question-text"></h2>
+      <div id="home23"></div>
+      <div id="away22"></div>
+      <!-- <div id="choices" class="choices"></div> -->
+      <button type="button" class="btn btn-primary btn-lg btn-block yup">
+        Pool
+      </button>
+      <button type="button" onclick="pickChelseaA()"class="btn btn-primary btn-lg btn-block yup">
+        Chelsea
+      </button>
+      <button type="button" class="btn btn-primary btn-lg btn-block yup">
+        Man City
+      </button>
+      <button type="button" class="btn btn-primary btn-lg btn-block yup">
+        Man U
+      </button>
 
 
-      <!-- FIRST HALF STAT PAGE -->
+      <button type="button" class="btn btn-secondary btn-lg" id="start">
+        Start Match
+      </button>
+    </div>
+      
+      
+        
+    </div>
+
+    
+ <!-- FIRST HALF STAT PAGE -->
       <div class="hide" id="passCount">
+
+
+        
+        <div id="away2">
+  
+        </div>
 
         <!-- class timer is stopwatch-container -->
         <!-- id time is stopwatch -->
         <div class="row justify-content-center timer"><span id="time">00</span></div>
 
         <div class="row justify-content-center">
-          <div class="col-3 teams">Team 1</div>
+          <div class="col-3 teams" id="home24"></div>
           <div class="col-1 teams">
             <p class="mid">vs</p>
           </div>
-          <div class="col-3 teams">Team 2</div>
+          <div class="col-3 teams" id="away24">Team 2</div>
         </div>
 
         <div class="row justify-content-center">
@@ -180,16 +182,19 @@
       <!-- half-time was formerly end-screen -->
       <!-- halftime-passes was formerly final-score -->
       <div class="hide" id="half-time">
+        <h5>Halftime!!</h5>
         <div class="row justify-content-center">
+          
+            <br>
           <div class="col-3 teams">Team 1</div>
           <div class="col-1 teams">
             <p class="mid">vs</p>
           </div>
           <div class="col-3 teams">Team 2</div>
         
-        <h2>Halftime!!</h2>
         
-          Passes for the first half are?? <span id="halftime-passes1"></span>
+        
+          <!-- Passes for the first half are?? <span id="halftime-passes1"></span> -->
         </p>
         </div>
         <div class="row justify-content-center">
@@ -204,7 +209,7 @@
 
         <!-- class timer is stopwatch-container -->
         <!-- id time is stopwatch -->
-        <div class="row justify-content-center timer"><span id="time">00</span></div>
+        <div class="row justify-content-center timer"><span id="time2"></span></div>
 
         <div class="row justify-content-center">
           <div class="col-3 teams">Team 1</div>
