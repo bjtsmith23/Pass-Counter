@@ -1,13 +1,4 @@
-// var questions = [
-//     {
-//         text: "Who is club is at Home in today's Match?",
-//         choices: ["Manchester City", "Liverpool", "Chelsea", "Arsenal", "Manchester United", "West Ham United", "Tottenham", "Wolverhampton", "Southampton", "Crystal Palace", "Aston Villa", "Leicester City", "Brighton & Hove", "Newcastle United", "Brentford", "Leeds United", "Everton", "Burnley", "Watford", "Norwich"],
-//     },
-//     {
-//         text: "Which club is the Away side?",
-//         choices: ["Manchester City", "Liverpool", "Chelsea", "Arsenal", "Manchester United", "West Ham United", "Tottenham", "Wolverhampton", "Southampton", "Crystal Palace", "Aston Villa", "Leicester City", "Brighton & Hove", "Newcastle United", "Brentford", "Leeds United", "Everton", "Burnley", "Watford", "Norwich"]
-//     }
-// ]
+
 
 var ms = 0;
 var sec = 0;
@@ -15,7 +6,6 @@ var min = 0;
 var quizQuestionsIndex = 0;
 var timerId;
 var timeCount = 0;
-// var teamOneP = 0;
 var passCount1 = 1;
 var passCount2 = 1;
 var goalCount1 = 1;
@@ -68,7 +58,7 @@ var fullTimeBtn = document.getElementById("fulltiz");
 
 
 
-
+var firstHalfPass = document.getElementById("htPassH");
 var homeTeamEl = document.getElementById("home1");
 var awayTeamEl = document.getElementById("away1");
 var chooseAwayBtn = document.getElementById("chooseAway");
@@ -98,6 +88,9 @@ var halftimeEl = document.getElementById("half-time");
 var passCount2El = document.getElementById("passCount2");
 var fullTimeEl = document.getElementById("full-time");
 
+const clubs = ["Chelsea", "Liverpool", "Manchester City", "Manchester United", "Leeds United", "Everton", "Aston Villa", "Brighton & Hove Albion", "Arsenal", "Tottenham"];
+let clubEl = document.getElementById("clubs");
+let clubEl2 = document.getElementById("clubs2");
 
 
 
@@ -106,61 +99,63 @@ function pickTeams() {
     startScreenEl.setAttribute("class", "hide");
     // teamHolderEl.setAttribute("class", "show");
     pickTeamsEl.setAttribute("class", "show");
-   
 
 
+    for (let i = 0; i < clubs.length; i++) {
+    function picked() {
+        console.log(`${clubs[i]} bullllockkkss picked`);
+        homeTeam.textContent = `${clubs[i]}`;
+    };
+
+    var buttonEl = document.createElement('button');
+    console.log(clubs[i]);
+    buttonEl.setAttribute("value", clubs[i]);
+    buttonEl.textContent = clubs[i];
+    clubEl.appendChild(buttonEl);
+    buttonEl.addEventListener("click", picked);
+};
 };
 
-function chooseAway() {
-    console.log(`${homeTeam.textContent}`);
+
+function chooseAway() {;
     if (homeTeam.textContent) {
     // homeTeam.textContent;
     pickTeamsEl.setAttribute("class", "hide");
     pickAwayEl.setAttribute("class", "show");
-    homeTwo.textContent = `${homeTeam.textContent} is the Home Team!!!`;
+    homeTwo.textContent = `${homeTeam.textContent} is Home`;
+    for (let i = 0; i < clubs.length; i++) {
+        function picked() {
+            console.log(`${clubs[i]} bullllockkkss picked`);
+            awayTeam.textContent = `${clubs[i]}`;
+        };
+    
+        var buttonEl = document.createElement('button');
+        console.log(clubs[i]);
+        buttonEl.setAttribute("value", clubs[i]);
+        buttonEl.textContent = clubs[i];
+        clubEl2.appendChild(buttonEl);
+        buttonEl.addEventListener("click", picked);
+    };
     } else {
-        alert("You must select a squaqq");
+        alert("You must select a club!!");
     };
 }
 
-
-
-
-        
-
-        
-    function pickChelsea() {
-        var teamSelected = "Chelsea";
-        // var choiceValue = event.getAttribute('value');
-        // console.log(choiceValue);
-        // console.log("Chelsea");
-        homeTeam.textContent = teamSelected;
-
-    }
-
-    function pickLiverpool() {
-
-    }
-
-    function pickChelseaA() {
-        console.log("Chelsea away");
-        var teamSelected = "Chelsea";
-        // var choiceValue = event.getAttribute('value');
-        // console.log(choiceValue);
-        // console.log("Chelsea");
-        awayTeam.textContent = teamSelected;
-
-    }
-   
-
-    
-
-
     
 function startMatch() {
+    let teamSelected = `${awayTeam.textContent}`;
+    function sameTeam() {
+        if (homeTeam.textContent === teamSelected) {
+            alert(`${homeTeam.textContent} can't play themselves!! Pick a different team!!!`);
+            e.preventDefault();
+        }
+    }
+    sameTeam();
     pickAwayEl.setAttribute("class", "hide");
     passCountEl.setAttribute("class", "show");
     console.log("I have been clicked!!!");
+    // clubEl2.textContent = `${awayTeam.textContent}`;
+
     function startTime() {
     timeoutId = setTimeout(function() {
         ms = parseInt(ms);
@@ -203,6 +198,7 @@ function halfTime() {
     passCountEl.setAttribute("class", "hide");
     halftimeEl.setAttribute("class", "show");
     console.log(passCount1);
+    firstHalfPass.textContent = passCount1;
 
 }
 
@@ -212,7 +208,7 @@ function secondHalf() {
     // console.log(passCount1);
     function startTime(flag) {
     
-        timeoutId = setTimeout(function() {
+        timeoutId2 = setTimeout(function() {
             ms = parseInt(ms);
             sec = parseInt(sec);
             min = parseInt(min);
@@ -227,9 +223,6 @@ function secondHalf() {
                 min = min + 1;
                 sec = 0;
             }
-            if (ms < 10) {
-                ms = '0' + ms;
-            }
             if (sec < 10) {
                 sec = '0' + sec;
             }
@@ -237,12 +230,12 @@ function secondHalf() {
                 min = '0' + min;
             }
      
-            timerEl2.innerHTML = "45" + min + ':' + sec;
+            timerEl2.innerHTML = min + ':' + sec;
      
             // calling start() function recursivly to continue stopwatch
             startTime();
      
-        }, 10); // setTimeout delay time 10 milliseconds
+        }, 20); // setTimeout delay time 10 milliseconds
     };
     startTime();
 }
@@ -252,8 +245,9 @@ function fullTime() {
     fullTimeEl.setAttribute("class", "show");
 
 
-}
 
+
+}
 
     function handlePass1() {
         passElOne.textContent = passCount1++;
