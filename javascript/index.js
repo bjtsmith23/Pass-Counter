@@ -59,6 +59,15 @@ var fullTimeBtn = document.getElementById("fulltiz");
 
 
 var firstHalfPass = document.getElementById("htPassH");
+var firstHalfPassA = document.getElementById("htPassA");
+var firstHalfGoal = document.getElementById("htGoalH");
+var firstHalfGoalA = document.getElementById("htGoalA");
+
+
+
+
+
+
 var homeTeamEl = document.getElementById("home1");
 var awayTeamEl = document.getElementById("away1");
 var chooseAwayBtn = document.getElementById("chooseAway");
@@ -112,6 +121,7 @@ function pickTeams() {
     buttonEl.setAttribute("value", clubs[i]);
     buttonEl.textContent = clubs[i];
     clubEl.appendChild(buttonEl);
+    buttonEl.setAttribute("id", "cloob");
     buttonEl.addEventListener("click", picked);
 };
 };
@@ -134,6 +144,7 @@ function chooseAway() {;
         buttonEl.setAttribute("value", clubs[i]);
         buttonEl.textContent = clubs[i];
         clubEl2.appendChild(buttonEl);
+        buttonEl.setAttribute("id", "cloob");
         buttonEl.addEventListener("click", picked);
     };
     } else {
@@ -143,14 +154,17 @@ function chooseAway() {;
 
     
 function startMatch() {
-    let teamSelected = `${awayTeam.textContent}`;
+    if (awayTeam.textContent) {
     function sameTeam() {
+        let teamSelected = `${awayTeam.textContent}`;
         if (homeTeam.textContent === teamSelected) {
             alert(`${homeTeam.textContent} can't play themselves!! Pick a different team!!!`);
             e.preventDefault();
-        }
-    }
+        }; 
+};
     sameTeam();
+};
+
     pickAwayEl.setAttribute("class", "hide");
     passCountEl.setAttribute("class", "show");
     console.log("I have been clicked!!!");
@@ -198,7 +212,11 @@ function halfTime() {
     passCountEl.setAttribute("class", "hide");
     halftimeEl.setAttribute("class", "show");
     console.log(passCount1);
-    firstHalfPass.textContent = passCount1;
+    firstHalfPass.textContent = passCount1 - 1;
+    firstHalfPassA.textContent = passCount2 - 1;
+    firstHalfGoal.textContent = goalCount1 - 1;
+    firstHalfGoalA.textContent = goalCount2 - 1;
+
 
 }
 

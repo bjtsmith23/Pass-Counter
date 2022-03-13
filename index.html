@@ -67,7 +67,7 @@
       
 
 
-    <div>
+    <div class="this">
       <button type="button" class="btn btn-secondary btn-lg" id="start">
         Start Match
       </button>
@@ -90,15 +90,13 @@
         <div class="row justify-content-center timer"><span id="time">00</span></div>
 
         <div class="row justify-content-center">
-          <div class="col-3 teams" id="home24"></div>
-          <div class="col-1 teams">
-            <p class="mid">vs</p>
-          </div>
-          <div class="col-3 teams" id="away24">Team 2</div>
+          <div class="col-6 teams" id="home24"></div>
+          <div class="col-6 teams" id="away24"></div>
         </div>
 
-        <div class="row justify-content-center">
-          <div class="col-3">
+        <!-- passes first half -->
+        <div class="row justify-content-center ">
+          <div class="col-5">
             <button
               type="button"
               class="btn btn-primary btn-lg btn-block pop"
@@ -107,10 +105,10 @@
               <span id="pass1"></span>
             </button>
           </div>
-          <div class="col-1">
-            <p class="mid">Passes</p>
+          <div class="col-2 mid">
+            <h3>Passes</h3>
           </div>
-          <div class="col-3">
+          <div class="col-5">
             <button
               type="button"
               class="btn btn-primary btn-lg btn-block pop"
@@ -121,8 +119,9 @@
           </div>
         </div>
 
+        <!-- goals first half -->
         <div class="row justify-content-center">
-          <div class="col-3">
+          <div class="col-5">
             <button
               type="button"
               class="btn btn-primary btn-lg btn-block pop"
@@ -132,11 +131,11 @@
             </button>
           </div>
 
-          <div class="col-1">
-            <p class="mid">Goals</p>
+          <div class="col-2 mid">
+            <h3>Goals</h3>
           </div>
 
-          <div class="col-3">
+          <div class="col-5">
             <button
               type="button"
               class="btn btn-primary btn-lg btn-block pop"
@@ -176,14 +175,26 @@
         </div>
 
         <div class="row justify-content-center">
-          <div class="col-3" id="htPassH">
+          <div class="col-3 lala" id="htPassH">
           </div>
 
           <div class="col-1">
             <p class="mid">Passes</p>
           </div>
 
-          <div class="col-3" id="htPassA">
+          <div class="col-3 lala" id="htPassA">
+          </div>
+        </div>
+
+        <div class="row justify-content-center">
+          <div class="col-3 lala" id="htGoalH">
+          </div>
+
+          <div class="col-1">
+            <p class="mid">Passes</p>
+          </div>
+
+          <div class="col-3 lala" id="htGoalA">
           </div>
         </div>
 
