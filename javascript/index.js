@@ -10,6 +10,10 @@ var passCount1 = 1;
 var passCount2 = 1;
 var goalCount1 = 1;
 var goalCount2 = 1;
+var passCount3 = 1;
+var passCount4 = 1;
+var goalCount3 = 1;
+var goalCount4 = 1;
 
 
 
@@ -22,11 +26,19 @@ var choicesEl = document.getElementById('choices');
 
 var timerEl2 = document.getElementById("time2");
 var timerEl = document.getElementById("time");
-var teamHolderEl = document.getElementById("teamHolder");
+// var teamHolderEl = document.getElementById("teamHolder");
+
+// first half stats
 var passElOne = document.getElementById("pass1");
 var passElTwo = document.getElementById("pass2");
 var goalElOne = document.getElementById("goal1");
 var goalElTwo = document.getElementById("goal2");
+
+// second half stats
+var passElThree = document.getElementById("pass3");
+var passElFour = document.getElementById("pass4");
+var goalElThree = document.getElementById("goal3");
+var goalElFour = document.getElementById("goal4");
 
 
 var awayMsg = document.getElementById("question-text");
@@ -39,6 +51,10 @@ var homeThree = document.getElementById("home24");
 var awayThree = document.getElementById("away24");
 var homeFour = document.getElementById("home25");
 var awayFour = document.getElementById("away25");
+var homeFive = document.getElementById("home26");
+var awayFive = document.getElementById("away26");
+var homeSix = document.getElementById("home27");
+var awaySix = document.getElementById("away27");
 
 
 var startScreenEl = document.getElementById("start-screen");
@@ -65,6 +81,11 @@ var firstHalfPass = document.getElementById("htPassH");
 var firstHalfPassA = document.getElementById("htPassA");
 var firstHalfGoal = document.getElementById("htGoalH");
 var firstHalfGoalA = document.getElementById("htGoalA");
+var secHalfPass = document.getElementById("ftPassH");
+var secHalfPassA = document.getElementById("ftPassA");
+var secHalfGoal = document.getElementById("ftGoalH");
+var secHalfGoalA = document.getElementById("ftGoalA");
+
 
 
 
@@ -86,6 +107,10 @@ var teamOnePassBtn = document.getElementById("team1p");
 var teamTwoPassBtn = document.getElementById("team2p");
 var teamOneGoalBtn = document.getElementById("team1g");
 var teamTwoGoalBtn = document.getElementById("team2g");
+var teamThreePassBtn = document.getElementById("team3p");
+var teamFourPassBtn = document.getElementById("team4p");
+var teamThreeGoalBtn = document.getElementById("team3g");
+var teamFourGoalBtn = document.getElementById("team4g");
 
 // var chelseaBtn = document.getElementById("chelsea")
 
@@ -115,8 +140,13 @@ function pickTeams() {
 
     for (let i = 0; i < clubs.length; i++) {
     function picked() {
-        console.log(`${clubs[i]} bullllockkkss picked`);
-        homeTeam.textContent = `${clubs[i]}`;
+        let teamPicked = `${clubs[i]}`;
+        if (teamPicked) {
+            console.log(`${clubs[i]} bullllockkkss picked`);
+            homeTeam.textContent = `${clubs[i]}`;
+            chooseAway();
+        };
+
     };
 
     var buttonEl = document.createElement('button');
@@ -138,8 +168,9 @@ function chooseAway() {;
     homeTwo.textContent = `${homeTeam.textContent} is Home`;
     for (let i = 0; i < clubs.length; i++) {
         function picked() {
-            console.log(`${clubs[i]} bullllockkkss picked`);
+            console.log(`${clubs[i]} bullls picked`);
             awayTeam.textContent = `${clubs[i]}`;
+            startMatch();
         };
     
         var buttonEl = document.createElement('button');
@@ -255,7 +286,9 @@ function secondHalf() {
             if (min < 10) {
                 min = '0' + min;
             }
-     
+            
+            homeFive.textContent = `${homeTeam.textContent}`;
+            awayFive.textContent = `${awayTeam.textContent}`;
             timerEl2.innerHTML = min + ':' + sec;
      
             // calling start() function recursivly to continue stopwatch
@@ -269,6 +302,12 @@ function secondHalf() {
 function fullTime() {
     passCount2El.setAttribute("class", "hide");
     fullTimeEl.setAttribute("class", "show");
+    homeSix.textContent = `${homeTeam.textContent}`;
+    awaySix.textContent = `${awayTeam.textContent}`;
+    secHalfPass.textContent = passCount1 + passCount3 - 2;
+    secHalfPassA.textContent = passCount2 + passCount4 - 2;
+    secHalfGoal.textContent = goalCount1 + goalCount3 - 2;
+    secHalfGoalA.textContent = goalCount2 + goalCount4 - 2;
 
 
 
@@ -291,10 +330,24 @@ function fullTime() {
         goalElTwo.textContent = goalCount2++;
     }
 
+    function handlePass3() {
+        passElThree.textContent = passCount3++;
+    }
+
+    function handlePass4() {
+        passElFour.textContent = passCount4++;
+    }
+
+    function handleGoal3() {
+        goalElThree.textContent = goalCount3++;
+    }
+
+    function handleGoal4() {
+        goalElFour.textContent = goalCount4++;
+    }
+
 
     pickTeamBtn.addEventListener("click", pickTeams);
-
-    chooseAwayBtn.addEventListener("click", chooseAway);
 
     startMatchBtn.addEventListener("click", startMatch);
 
@@ -321,3 +374,11 @@ function fullTime() {
     teamOneGoalBtn.addEventListener("click", handleGoal1);
 
     teamTwoGoalBtn.addEventListener("click", handleGoal2);
+
+    teamThreePassBtn.addEventListener("click", handlePass3);
+
+    teamFourPassBtn. addEventListener("click", handlePass4);
+
+    teamThreeGoalBtn.addEventListener("click", handleGoal3);
+
+    teamFourGoalBtn.addEventListener("click", handleGoal4);

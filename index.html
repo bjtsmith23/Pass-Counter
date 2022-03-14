@@ -41,21 +41,11 @@
 
     <div class="hide" id="pick-screen1">
       <h2 id="question-text">Select today's Home Team</h2>
-      
       <div class="row justify-content-center">
         <div class="col-6 teams" id="home22"></div>
         <div class="col-6 teams" id="away22"></div>
       </div>
       <div class="clubs" id="clubs"></div> 
-    
-
-      <div class="this">
-        <button type="button" class="btn btn-secondary btn-lg" id="chooseAway">
-          Choose Away Sided
-        </button>
-      </div>
-
-
     </div>
 
     <div class="hide" id="pick-screen2">
@@ -88,8 +78,9 @@
 
         <!-- clubs -->
         <div class="row justify-content-center">
-          <div class="col-6 teams" id="home24"></div>
-          <div class="col-6 teams" id="away24"></div>
+          <div class="col-5 teams" id="home24"></div>
+          <div class="col-1 teams"></div>
+          <div class="col-5 teams" id="away24"></div>
         </div>
 
         <!-- passes first half -->
@@ -103,7 +94,7 @@
               <span id="pass1"></span>
             </button>
           </div>
-          <div class="col-2 mid">
+          <div class="col-1 mid">
             <h3>Passes</h3>
           </div>
           <div class="col-5">
@@ -129,7 +120,7 @@
             </button>
           </div>
 
-          <div class="col-2 mid">
+          <div class="col-1 mid">
             <h3>Goals</h3>
           </div>
 
@@ -143,6 +134,7 @@
             </button>
           </div>
         </div>
+        <!-- halftime button -->
         <div class="row justify-content-center">
           <button type="button" class="btn btn-secondary btn-lg" id="halftiz">
             Halftime
@@ -155,16 +147,16 @@
 
       <!-- half-time was formerly end-screen -->
       <!-- halftime-passes was formerly final-score -->
-      <div class="hide" id="half-time">
+         <div class="hide" id="half-time">
 
         <!-- teams -->
-        <div class="row justify-content-center">
+          <div class="row justify-content-center">
           <div class="col-6 teams" id="home25"></div>
           <div class="col-6 teams" id="away25"></div>
-        </div>
+          </div>
 
         <!-- passes -->
-        <div class="row justify-content-center">
+          <div class="row justify-content-center">
           <div class="col-5 lala" id="htPassH">
           </div>
 
@@ -174,10 +166,10 @@
 
           <div class="col-5 lala" id="htPassA">
           </div>
-        </div>
+          </div>
 
         <!-- goals -->
-        <div class="row justify-content-center">
+          <div class="row justify-content-center">
           <div class="col-5 lala" id="htGoalH">
           </div>
 
@@ -187,82 +179,84 @@
 
           <div class="col-5 lala" id="htGoalA">
           </div>
-        </div>
+          </div>
 
         <!-- start second half button -->
-        <div class="row justify-content-center">
+          <div class="row justify-content-center">
           <button type="button" class="btn btn-secondary btn-lg" id="halftiz2">
             Start Second Half
           </button>
           </div>
 
 
-      </div>
+        </div>
 
       <!-- SECOND HALF STAT PAGE -->
-      <div class="hide" id="passCount2">
+        <div class="hide" id="passCount2">
 
-        <!-- class timer is stopwatch-container -->
-        <!-- id time is stopwatch -->
+        <!-- clock -->
         <div class="row justify-content-center timer"><span id="time2">45:00</span></div>
 
+        <!-- selected clubs -->
         <div class="row justify-content-center">
-          <div class="col-3 teams">Team 1</div>
-          <div class="col-1 teams">
-            <p class="mid">vs</p>
-          </div>
-          <div class="col-3 teams">Team 2</div>
+          <div class="col-5 teams" id="home26"></div>
+          <div class="col-1 teams"></div>
+          <div class="col-5 teams" id="away26"></div>
         </div>
 
-        <div class="row justify-content-center">
-          <div class="col-3">
+         <!-- passes second half -->
+         <div class="row justify-content-center ">
+          <div class="col-5">
             <button
               type="button"
               class="btn btn-primary btn-lg btn-block pop"
-              id="team1p"
+              id="team3p"
             >
-              <span id="pass1"></span>
+              <span id="pass3"></span>
             </button>
           </div>
-          <div class="col-1">
-            <p class="mid">Passes</p>
+          <div class="col-1 mid">
+            <h3>Passes</h3>
           </div>
-          <div class="col-3">
+          <div class="col-5">
             <button
               type="button"
               class="btn btn-primary btn-lg btn-block pop"
-              id="team2p"
+              id="team4p"
             >
-              <span id="pass2"></span>
-            </button>
-          </div>
-        </div>
-
-        <div class="row justify-content-center">
-          <div class="col-3">
-            <button
-              type="button"
-              class="btn btn-primary btn-lg btn-block pop"
-              id="team1g"
-            >
-              <span id="goal1"></span>
-            </button>
-          </div>
-
-          <div class="col-1">
-            <p class="mid">Goals</p>
-          </div>
-
-          <div class="col-3">
-            <button
-              type="button"
-              class="btn btn-primary btn-lg btn-block pop"
-              id="team2g"
-            >
-              <span id="goal2"></span>
+              <span id="pass4"></span>
             </button>
           </div>
         </div>
+
+        <!-- goals second half -->
+        <div class="row justify-content-center">
+          <div class="col-5">
+            <button
+              type="button"
+              class="btn btn-primary btn-lg btn-block pop"
+              id="team3g"
+            >
+              <span id="goal3"></span>
+            </button>
+          </div>
+
+          <div class="col-1 mid">
+            <h3>Goals</h3>
+          </div>
+
+          <div class="col-5">
+            <button
+              type="button"
+              class="btn btn-primary btn-lg btn-block pop"
+              id="team4g"
+            >
+              <span id="goal4"></span>
+            </button>
+          </div>
+        </div>
+
+        <!-- match end button -->
         <div class="row justify-content-center">
           <button type="button" class="btn btn-secondary btn-lg" id="fulltiz">
             Match End
@@ -272,14 +266,42 @@
         </div>
 
         <div class="hide" id="full-time">
+
         <h2>Full-time!!</h2>
-        <p>
-          Passes for the first half the second half and game are are
-          <span id="final-score"></span>
-        </p>
+        <div class="row justify-content-center">
+          <div class="col-6 teams" id="home27"></div>
+          <div class="col-6 teams" id="away27"></div>
         </div>
+
+        <div class="row justify-content-center">
+          <div class="col-5 lala" id="ftPassH">
+          </div>
+
+          <div class="col-2">
+            <p class="mid">Passes</p>
+          </div>
+
+          <div class="col-5 lala" id="ftPassA">
+          </div>
+          </div>
+
+        <!-- goals -->
+          <div class="row justify-content-center">
+          <div class="col-5 lala" id="ftGoalH">
+          </div>
+
+          <div class="col-2">
+            <p class="mid">Goals</p>
+          </div>
+
+          <div class="col-5 lala" id="ftGoalA">
+          </div>
+          </div>
+
+        
+        </div>
+
       </div>
-    </div>
 
     <script src="./javascript/index.js"></script>
   </body>

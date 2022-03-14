@@ -126,24 +126,28 @@ h1 {
     margin-top: 40px;
     display: flex;
     justify-content: center;
+    /* position: fixed; */
 }
 
 .clubs {
     margin-top: 25px;
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
+    /* align-items: center; */
+    justify-content: center;
 }
 
 #cloob {
+    text-align: center;
     align-items: center;
     min-height: 60px;
-    min-width: 100px;
+    min-width: 250px;
     border-radius: 20px;
-    background-color: pink;
+    background-color: white;
     margin-top: 5px;
     margin-bottom: 5px;
-    margin-left: 20px;
-    margin-right: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 .lala {
@@ -158,6 +162,6 @@ h1 {
     min-height: 100px;
 }
 
-#pass1, #pass2, #goal1, #goal2 {
+#pass1, #pass2, #goal1, #goal2, #pass3, #pass4, #goal3, #goal4 {
     font-size: 50px;
 }
