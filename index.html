@@ -41,7 +41,11 @@
 
     <div class="hide" id="pick-screen1">
       <h2 id="question-text">Select today's Home Team</h2>
-      <div id="home22"></div>
+      
+      <div class="row justify-content-center">
+        <div class="col-6 teams" id="home22"></div>
+        <div class="col-6 teams" id="away22"></div>
+      </div>
       <div class="clubs" id="clubs"></div> 
     
 
@@ -59,7 +63,7 @@
 
 
 
-      <h2 id="question-text"></h2>
+      <h2 id="question-text">Pick Away Side</h2>
       <div id="home23"></div>
       <div id="away22"></div>
       <!-- <div id="choices" class="choices"></div> -->
@@ -79,16 +83,10 @@
  <!-- FIRST HALF STAT PAGE -->
       <div class="hide" id="passCount">
 
-
-        
-        <div id="away2">
-  
-        </div>
-
-        <!-- class timer is stopwatch-container -->
-        <!-- id time is stopwatch -->
+        <!-- clock -->
         <div class="row justify-content-center timer"><span id="time">00</span></div>
 
+        <!-- clubs -->
         <div class="row justify-content-center">
           <div class="col-6 teams" id="home24"></div>
           <div class="col-6 teams" id="away24"></div>
@@ -158,55 +156,47 @@
       <!-- half-time was formerly end-screen -->
       <!-- halftime-passes was formerly final-score -->
       <div class="hide" id="half-time">
-        <h5>Halftime!!</h5>
-        <div class="row">
-          
-            <br>
-          <div class="col-3 teams"></div>
-          <div class="col-1 teams">
-            <p class="mid">vs</p>
-          </div>
-          <div class="col-3 teams"></div>
-        
-        
-        
-          <!-- Passes for the first half are?? <span id="halftime-passes1"></span> -->
-        </p>
+
+        <!-- teams -->
+        <div class="row justify-content-center">
+          <div class="col-6 teams" id="home25"></div>
+          <div class="col-6 teams" id="away25"></div>
         </div>
 
+        <!-- passes -->
         <div class="row justify-content-center">
-          <div class="col-3 lala" id="htPassH">
+          <div class="col-5 lala" id="htPassH">
           </div>
 
-          <div class="col-1">
+          <div class="col-2">
             <p class="mid">Passes</p>
           </div>
 
-          <div class="col-3 lala" id="htPassA">
+          <div class="col-5 lala" id="htPassA">
           </div>
         </div>
 
+        <!-- goals -->
         <div class="row justify-content-center">
-          <div class="col-3 lala" id="htGoalH">
+          <div class="col-5 lala" id="htGoalH">
           </div>
 
-          <div class="col-1">
-            <p class="mid">Passes</p>
+          <div class="col-2">
+            <p class="mid">Goals</p>
           </div>
 
-          <div class="col-3 lala" id="htGoalA">
+          <div class="col-5 lala" id="htGoalA">
           </div>
         </div>
 
-
-
-
-
+        <!-- start second half button -->
         <div class="row justify-content-center">
           <button type="button" class="btn btn-secondary btn-lg" id="halftiz2">
             Start Second Half
           </button>
           </div>
+
+
       </div>
 
       <!-- SECOND HALF STAT PAGE -->

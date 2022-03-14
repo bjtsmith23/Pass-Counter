@@ -33,9 +33,12 @@ var awayMsg = document.getElementById("question-text");
 
 var awayTeam = document.getElementById("away22");
 var homeTeam = document.getElementById("home22");
+var awayTeam = document.getElementById("away22");
 var homeTwo = document.getElementById("home23");
 var homeThree = document.getElementById("home24");
 var awayThree = document.getElementById("away24");
+var homeFour = document.getElementById("home25");
+var awayFour = document.getElementById("away25");
 
 
 var startScreenEl = document.getElementById("start-screen");
@@ -163,6 +166,9 @@ function startMatch() {
         }; 
 };
     sameTeam();
+} else if (!awayTeam.textContent) {
+    alert("You must select an Away Side!!!");
+    e.preventDefault();
 };
 
     pickAwayEl.setAttribute("class", "hide");
@@ -212,6 +218,8 @@ function halfTime() {
     passCountEl.setAttribute("class", "hide");
     halftimeEl.setAttribute("class", "show");
     console.log(passCount1);
+    homeFour.textContent = `${homeTeam.textContent}`;
+    awayFour.textContent = `${awayTeam.textContent}`;
     firstHalfPass.textContent = passCount1 - 1;
     firstHalfPassA.textContent = passCount2 - 1;
     firstHalfGoal.textContent = goalCount1 - 1;
