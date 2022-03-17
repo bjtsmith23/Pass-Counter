@@ -107,12 +107,19 @@ h1 {
     margin-right: 10px;
 }
 
-#home22, #home23, #away22 {
+#home22, #away22 {
     margin-top: 15px;
     min-height: 25px;
     color: white;
-
 }
+
+#home23 {
+    color: white;
+    text-align: center;
+    /* align-items: center; */
+}
+
+
 
 
 

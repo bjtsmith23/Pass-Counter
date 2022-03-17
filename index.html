@@ -40,7 +40,7 @@
     
 
     <div class="hide" id="pick-screen1">
-      <h2 id="question-text">Select today's Home Team</h2>
+      <h2 id="question-text">Who is today's Home Team</h2>
       <div class="row justify-content-center">
         <div class="col-6 teams" id="home22"></div>
         <div class="col-6 teams" id="away22"></div>
@@ -51,10 +51,10 @@
     <div class="hide" id="pick-screen2">
     
 
-
-
-      <h2 id="question-text">Pick Away Side</h2>
       <div id="home23"></div>
+
+      <h2 id="question-text">Who is the Away Side</h2>
+      
       <div id="away22"></div>
       <!-- <div id="choices" class="choices"></div> -->
       <div class="clubs" id="clubs2"></div> 
@@ -145,8 +145,7 @@
 
 
 
-      <!-- half-time was formerly end-screen -->
-      <!-- halftime-passes was formerly final-score -->
+    
          <div class="hide" id="half-time">
 
         <!-- teams -->
@@ -265,14 +264,18 @@
         
         </div>
 
+      <!-- FULL TIME -->
         <div class="hide" id="full-time">
 
         <h2>Full-time!!</h2>
+
+        <!-- teams -->
         <div class="row justify-content-center">
           <div class="col-6 teams" id="home27"></div>
           <div class="col-6 teams" id="away27"></div>
         </div>
 
+        <!-- passes -->
         <div class="row justify-content-center">
           <div class="col-5 lala" id="ftPassH">
           </div>
@@ -297,9 +300,21 @@
           <div class="col-5 lala" id="ftGoalA">
           </div>
           </div>
+          
+          <div class="row justify-content-center">
+            <button type="button" class="btn btn-secondary" id="logGame">
+              Log Game
+          </button>
+          </div>
+          
+          
+
+          
 
         
         </div>
+
+        
 
       </div>
 

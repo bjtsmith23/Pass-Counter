@@ -72,6 +72,7 @@ var startMatchBtn = document.getElementById("start");
 var halfTimeBtn = document.getElementById("halftiz");
 var secondHalfBtn = document.getElementById("halftiz2");
 var fullTimeBtn = document.getElementById("fulltiz");
+var logGameBtn = document.getElementById("logGame");
 
 
 
@@ -314,6 +315,38 @@ function fullTime() {
 
 }
 
+
+function saveScores() {
+    console.log('saveScores');
+    // var initialsValue = initialsInputEl.value.trim();
+    var scores = [];
+    if (passCount1) {
+        scores = JSON.parse(localStorage.getItem('scores'));
+        if (!scores) {
+            scores = [];
+        };
+        var newScore = {
+            score: secHalfGoal
+            // initials: initialsValu
+        }
+        console.log(scores);
+        scores.push(newScore);
+        localStorage.setItem('scores', JSON.stringify(scores));
+    }
+    
+    location.href="./highscores.html";
+
+    return;
+}
+
+
+function logGame(){
+    fullTimeEl.setAttribute("class", "hide");
+    console.log("Welcome to the Log!!");
+    saveScores();
+    // `${homeTeam.textContent}`
+}
+
     function handlePass1() {
         passElOne.textContent = passCount1++;
     }
@@ -356,6 +389,8 @@ function fullTime() {
     secondHalfBtn.addEventListener("click", secondHalf);
 
     fullTimeBtn.addEventListener("click", fullTime);
+
+    logGameBtn.addEventListener("click", logGame);
 
     // chelseaBtn.addEventListener("click", pickChelsea);
     
