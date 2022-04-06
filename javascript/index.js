@@ -58,6 +58,7 @@ var awaySix = document.getElementById("away27");
 
 
 var startScreenEl = document.getElementById("start-screen");
+var teamHolderEl = document.getElementById("team-holder");
 var pickTeamsEl = document.getElementById("pick-screen1");
 var pickAwayEl = document.getElementById("pick-screen2");
 var passCountEl = document.getElementById("passCount");
@@ -69,6 +70,9 @@ var fullTimeEl = document.getElementById("full-time");
 var pickTeamBtn = document.getElementById("pick");
 
 var startMatchBtn = document.getElementById("start");
+var backBtn = document.getElementById("back");
+
+
 var halfTimeBtn = document.getElementById("halftiz");
 var secondHalfBtn = document.getElementById("halftiz2");
 var fullTimeBtn = document.getElementById("fulltiz");
@@ -118,15 +122,9 @@ var teamFourGoalBtn = document.getElementById("team4g");
 
 
 
-var startScreenEl = document.getElementById("start-screen");
-var pickTeamsEl = document.getElementById("pick-screen1");
-var pickAwayEl = document.getElementById("pick-screen2");
-var passCountEl = document.getElementById("passCount");
-var halftimeEl = document.getElementById("half-time");
-var passCount2El = document.getElementById("passCount2");
-var fullTimeEl = document.getElementById("full-time");
 
-const clubs = ["Chelsea", "Liverpool", "Manchester City", "Manchester United", "Leeds United", "Everton", "Aston Villa", "Brighton & Hove Albion", "Arsenal", "Tottenham"];
+
+const clubs = ["Chelsea", "Liverpool", "Manchester City", "Manchester United", "Leeds United", "Everton", "Aston Villa", "Brighton & Hove Albion", "Arsenal", "Tottenham Hotspur", "West Ham United", "Wolverhampton Wanderers", "Crystal Palace", "Southampton", "Brentford", "Burnley", "Norwich City", "Watford", "Newcastle United", "Leicester City"];
 let clubEl = document.getElementById("clubs");
 let clubEl2 = document.getElementById("clubs2");
 
@@ -135,217 +133,227 @@ let clubEl2 = document.getElementById("clubs2");
 // MAIN PROCESS
 function pickTeams() {
     startScreenEl.setAttribute("class", "hide");
-    // teamHolderEl.setAttribute("class", "show");
     pickTeamsEl.setAttribute("class", "show");
 
 
     for (let i = 0; i < clubs.length; i++) {
-    function picked() {
-        let teamPicked = `${clubs[i]}`;
-        if (teamPicked) {
-            console.log(`${clubs[i]} bullllockkkss picked`);
-            homeTeam.textContent = `${clubs[i]}`;
-            chooseAway();
-        };
-
-    };
-
-    var buttonEl = document.createElement('button');
-    console.log(clubs[i]);
-    buttonEl.setAttribute("value", clubs[i]);
-    buttonEl.textContent = clubs[i];
-    clubEl.appendChild(buttonEl);
-    buttonEl.setAttribute("id", "cloob");
-    buttonEl.addEventListener("click", picked);
-};
-};
-
-
-function chooseAway() {;
-    if (homeTeam.textContent) {
-    // homeTeam.textContent;
-    pickTeamsEl.setAttribute("class", "hide");
-    pickAwayEl.setAttribute("class", "show");
-    homeTwo.textContent = `${homeTeam.textContent} is Home`;
-    for (let i = 0; i < clubs.length; i++) {
         function picked() {
-            console.log(`${clubs[i]} bullls picked`);
-            awayTeam.textContent = `${clubs[i]}`;
-            startMatch();
+            let teamPicked = `${clubs[i]}`;
+            if (teamPicked) {
+                console.log(`${clubs[i]} bullllockkkss picked`);
+                homeTeam.textContent = `${clubs[i]}`;
+                chooseAway();
+            };
+
         };
-    
+
         var buttonEl = document.createElement('button');
         console.log(clubs[i]);
         buttonEl.setAttribute("value", clubs[i]);
         buttonEl.textContent = clubs[i];
-        clubEl2.appendChild(buttonEl);
+        clubEl.appendChild(buttonEl);
         buttonEl.setAttribute("id", "cloob");
         buttonEl.addEventListener("click", picked);
     };
+};
+
+function repickHomeTeam() {
+    pickAwayEl.setAttribute("class", "hide");
+    pickTeamsEl.setAttribute("class", "show");
+    preventDefault();
+}
+
+
+function chooseAway() {
+    ;
+    if (homeTeam.textContent) {
+        // homeTeam.textContent;
+        pickTeamsEl.setAttribute("class", "hide");
+        pickAwayEl.setAttribute("class", "show");
+        homeTwo.textContent = `${homeTeam.textContent} is Home`;
+        for (let i = 0; i < clubs.length; i++) {
+            function picked() {
+                console.log(`${clubs[i]} has been picked as away team`);
+                awayTeam.textContent = `${clubs[i]}`;
+                startMatch();
+            };
+
+            var buttonEl = document.createElement('button');
+            // console.log(clubs[i]);
+            buttonEl.setAttribute("value", clubs[i]);
+            buttonEl.textContent = clubs[i];
+            clubEl2.appendChild(buttonEl);
+            buttonEl.setAttribute("id", "cloob");
+            buttonEl.addEventListener("click", picked);
+        };
     } else {
         alert("You must select a club!!");
     };
+
+
 }
 
-    
+
+
+
+
+
+
+
+
+
 function startMatch() {
     if (awayTeam.textContent) {
-    function sameTeam() {
-        let teamSelected = `${awayTeam.textContent}`;
-        if (homeTeam.textContent === teamSelected) {
-            alert(`${homeTeam.textContent} can't play themselves!! Pick a different team!!!`);
-            e.preventDefault();
-        }; 
-};
-    sameTeam();
-} else if (!awayTeam.textContent) {
-    alert("You must select an Away Side!!!");
-    e.preventDefault();
-};
+        function sameTeam() {
+            let teamSelected = `${awayTeam.textContent}`;
+            if (homeTeam.textContent === teamSelected) {
+                alert(`${homeTeam.textContent} can't play themselves!! Pick a different team!!!`);
+                e.preventDefault();
+            };
+        };
+        sameTeam();
+    } else if (!awayTeam.textContent) {
+        alert("You must select an Away Side!!!");
+        e.preventDefault();
+    };
+
 
     pickAwayEl.setAttribute("class", "hide");
     passCountEl.setAttribute("class", "show");
     console.log("I have been clicked!!!");
     // clubEl2.textContent = `${awayTeam.textContent}`;
+    homeThree.textContent = `${homeTeam.textContent}`;
+    awayThree.textContent = `${awayTeam.textContent}`;
+
+
+    let seconds = 0;
+    let minutes = 0;
+
+    // Define vars to hold display value for
+    let displaySeconds = 0;
+    let displayMinutes = 0;
+
+
+
 
     function startTime() {
-    timeoutId = setTimeout(function() {
-        ms = parseInt(ms);
-        sec = parseInt(sec);
-        min = parseInt(min);
- 
-        ms++;
- 
-        if (ms == 100) {
-            sec = sec + 1;
-            ms = 0;
-        }
-        if (sec == 60) {
-            min = min + 1;
-            sec = 0;
-        }
-        if (ms < 10) {
-            ms = '0' + ms;
-        }
-        if (sec < 10) {
-            sec = '0' + sec;
-        }
-        if (min < 10) {
-            min = '0' + min;
-        }
-        homeThree.textContent = `${homeTeam.textContent}`;
-        awayThree.textContent = `${awayTeam.textContent}`;
-        timerEl.innerHTML = min + ':' + sec;
- 
-        // calling start() function recursivly to continue stopwatch
-        startTime();
- 
-    }, 10); // setTimeout delay time 10 milliseconds
-}   
-startTime();
-};
 
+        seconds++;
+        console.log("started");
 
-function halfTime() {
-    passCountEl.setAttribute("class", "hide");
-    halftimeEl.setAttribute("class", "show");
-    console.log(passCount1);
-    homeFour.textContent = `${homeTeam.textContent}`;
-    awayFour.textContent = `${awayTeam.textContent}`;
-    firstHalfPass.textContent = passCount1 - 1;
-    firstHalfPassA.textContent = passCount2 - 1;
-    firstHalfGoal.textContent = goalCount1 - 1;
-    firstHalfGoalA.textContent = goalCount2 - 1;
+        if (seconds / 60 === 1) {
+            seconds = 0;
+            minutes++;
+    }
+        if (minutes / 60 === 1) {
+            minutes = 0;
+    }
+        
 
+        if (seconds < 10) {
+        displaySeconds = "0" + seconds.toString();
+    }
+        else{
+        displaySeconds = seconds;
+    }
 
-}
+        if (minutes < 10) {
+        displayMinutes = "0" + minutes.toString()
+    }
 
-function secondHalf() {
-    halftimeEl.setAttribute("class", "hide");
-    passCount2El.setAttribute("class", "show");
-    // console.log(passCount1);
-    function startTime(flag) {
-    
-        timeoutId2 = setTimeout(function() {
-            ms = parseInt(ms);
-            sec = parseInt(sec);
-            min = parseInt(min);
-     
-            ms++;
-     
-            if (ms == 100) {
-                sec = sec + 1;
-                ms = 0;
-            }
-            if (sec == 60) {
-                min = min + 1;
-                sec = 0;
-            }
-            if (sec < 10) {
-                sec = '0' + sec;
-            }
-            if (min < 10) {
-                min = '0' + min;
-            }
-            
-            homeFive.textContent = `${homeTeam.textContent}`;
-            awayFive.textContent = `${awayTeam.textContent}`;
-            timerEl2.innerHTML = min + ':' + sec;
-     
-            // calling start() function recursivly to continue stopwatch
-            startTime();
-     
-        }, 20); // setTimeout delay time 10 milliseconds
-    };
-    startTime();
-}
-
-function fullTime() {
-    passCount2El.setAttribute("class", "hide");
-    fullTimeEl.setAttribute("class", "show");
-    homeSix.textContent = `${homeTeam.textContent}`;
-    awaySix.textContent = `${awayTeam.textContent}`;
-    secHalfPass.textContent = passCount1 + passCount3 - 2;
-    secHalfPassA.textContent = passCount2 + passCount4 - 2;
-    secHalfGoal.textContent = goalCount1 + goalCount3 - 2;
-    secHalfGoalA.textContent = goalCount2 + goalCount4 - 2;
-
-
-
-
-}
-
-
-function saveScores() {
-    console.log('saveScores');
-    // var initialsValue = initialsInputEl.value.trim();
-    var scores = [];
-    if (passCount1) {
-        scores = JSON.parse(localStorage.getItem('scores'));
-        if (!scores) {
-            scores = [];
-        };
-        var newScore = {
-            score: secHalfGoal
-            // initials: initialsValu
-        }
-        console.log(scores);
-        scores.push(newScore);
-        localStorage.setItem('scores', JSON.stringify(scores));
+    timerEl.textContent = displayMinutes + ':' + displaySeconds;
     }
     
-    location.href="./highscores.html";
-
-    return;
+    window.setInterval( startTime, 1000 );
 }
 
+    function halfTime() {
+        passCountEl.setAttribute("class", "hide");
+        halftimeEl.setAttribute("class", "show");
+        console.log(passCount1);
+        homeFour.textContent = `${homeTeam.textContent}`;
+        awayFour.textContent = `${awayTeam.textContent}`;
+        firstHalfPass.textContent = passCount1 - 1;
+        firstHalfPassA.textContent = passCount2 - 1;
+        firstHalfGoal.textContent = goalCount1 - 1;
+        firstHalfGoalA.textContent = goalCount2 - 1;
 
-function logGame(){
-    fullTimeEl.setAttribute("class", "hide");
-    console.log("Welcome to the Log!!");
-    saveScores();
-    // `${homeTeam.textContent}`
-}
+
+    }
+
+    function secondHalf() {
+        halftimeEl.setAttribute("class", "hide");
+        passCount2El.setAttribute("class", "show");
+        // console.log(passCount1);
+        function startTime(flag) {
+
+            timeoutId2 = setTimeout(function () {
+                ms = parseInt(ms);
+                sec = parseInt(sec);
+                min = parseInt(min);
+
+                ms++;
+
+                if (ms == 100) {
+                    sec = sec + 1;
+                    ms = 0;
+                }
+                if (sec == 60) {
+                    min = min + 1;
+                    sec = 0;
+                }
+                if (sec < 10) {
+                    sec = '0' + sec;
+                }
+                if (min < 10) {
+                    min = '0' + min;
+                }
+
+                homeFive.textContent = `${homeTeam.textContent}`;
+                awayFive.textContent = `${awayTeam.textContent}`;
+                timerEl2.innerHTML = min + ':' + sec;
+
+                // calling start() function recursivly to continue stopwatch
+                startTime();
+
+            }, 20); // setTimeout delay time 10 milliseconds
+        };
+        startTime();
+    }
+
+    function fullTime() {
+        passCount2El.setAttribute("class", "hide");
+        fullTimeEl.setAttribute("class", "show");
+        homeSix.textContent = `${homeTeam.textContent}`;
+        awaySix.textContent = `${awayTeam.textContent}`;
+        secHalfPass.textContent = passCount1 + passCount3 - 2;
+        secHalfPassA.textContent = passCount2 + passCount4 - 2;
+        secHalfGoal.textContent = goalCount1 + goalCount3 - 2;
+        secHalfGoalA.textContent = goalCount2 + goalCount4 - 2;
+
+
+
+
+    }
+
+
+    function saveScores() {
+        console.log('saveScores');
+
+    }
+
+
+    function logGame() {
+        fullTimeEl.setAttribute("class", "hide");
+        // logGameEl.setAttribute("class", "show");
+
+        console.log(homeTeam.textContent);
+        console.log(awayTeam.textContent);
+        console.log(passCount3);
+        console.log(goalCount3);
+        saveScores();
+        // `${homeTeam.textContent}`
+    }
 
     function handlePass1() {
         passElOne.textContent = passCount1++;
@@ -393,8 +401,8 @@ function logGame(){
     logGameBtn.addEventListener("click", logGame);
 
     // chelseaBtn.addEventListener("click", pickChelsea);
-    
 
+    backBtn.addEventListener("click", repickHomeTeam);
 
 
 
@@ -412,7 +420,7 @@ function logGame(){
 
     teamThreePassBtn.addEventListener("click", handlePass3);
 
-    teamFourPassBtn. addEventListener("click", handlePass4);
+    teamFourPassBtn.addEventListener("click", handlePass4);
 
     teamThreeGoalBtn.addEventListener("click", handleGoal3);
 

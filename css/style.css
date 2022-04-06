@@ -132,12 +132,13 @@ h1 {
 .this {
     margin-top: 40px;
     display: flex;
-    justify-content: center;
-    /* position: fixed; */
+    flex-direction: column;
 }
 
+
+
 .clubs {
-    margin-top: 25px;
+    /* margin-top: 15px; */
     display: flex;
     flex-wrap: wrap;
     /* align-items: center; */
