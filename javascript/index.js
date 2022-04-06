@@ -316,7 +316,7 @@ function startMatch() {
                 // calling start() function recursivly to continue stopwatch
                 startTime();
 
-            }, 20); // setTimeout delay time 10 milliseconds
+            }, 10); // setTimeout delay time 10 milliseconds
         };
         startTime();
     }

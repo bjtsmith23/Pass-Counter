@@ -2,8 +2,12 @@
     background-color: rgb(61, 3, 61);
     margin-top: 50px;
     margin-bottom: 100px;
+    touch-action: manipulation;
     /* color: white; */
 }
+
+
+
 
 .row {
     margin-top: 25px;
@@ -139,6 +143,7 @@ h1 {
 
 .clubs {
     /* margin-top: 15px; */
+    font-weight: 5px;
     display: flex;
     flex-wrap: wrap;
     /* align-items: center; */
